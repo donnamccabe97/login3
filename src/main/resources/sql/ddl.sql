@@ -151,9 +151,11 @@ INSERT INTO `orders` (`oid`,`cid`,`total`,`orderType`,`orderDate`) VALUES
 
 DROP TABLE IF EXISTS `product`;
 CREATE TABLE `product` (
-  `pid` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `pname` varchar(45) NOT NULL,
+  `productID` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `productTitle` varchar(45) NOT NULL,
   `price` double NOT NULL,
+  `category` varchar(45) NOT NULL,
+  `image` varchar(45) NOT NULL,
   `qty` int(10) unsigned NOT NULL,
   PRIMARY KEY (`pid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
@@ -163,16 +165,16 @@ CREATE TABLE `product` (
 --
 
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` (`pid`,`pname`,`price`,`qty`) VALUES 
- (1,'computer',1000,80),
- (4,'mac',1200,16),
- (5,'ipad',500,49),
- (6,'iphone',500,40),
- (7,'ipod',100,79),
- (8,'dishwaser',300,189),
- (9,'tv',300,119),
- (10,'printer',80,119),
- (11,'mouse',20,100);
+INSERT INTO `product` (`productID`,`ProductTitle`,`price`,`category`,`image``qty`) VALUES 
+ (1,'computer',1000,'eletronics', '???',80),
+ (4,'mac',1200,'eletronics', '???',16),
+ (5,'ipad',500,'eletronics', '???',49),
+ (6,'iphone',500,'eletronics', '???',40),
+ (7,'ipod',100,'eletronics', '???',79),
+ (8,'dishwaser',300,'eletronics', '???',189),
+ (9,'tv',300,'eletronics', '???',119),
+ (10,'printer',80,'eletronics', '???',119),
+ (11,'mouse',20,'eletronics', '???',100);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 
 

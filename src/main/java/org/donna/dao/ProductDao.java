@@ -41,9 +41,11 @@ public class ProductDao {
         @Override
         public Product mapRow(ResultSet rs, int rowNum) throws SQLException {
             Product product = new Product();
-            product.setPid(rs.getInt("pid"));
-            product.setPname(rs.getString("pname"));
+            product.setProductID(rs.getInt("productID"));
+            product.setProductTitle(rs.getString("productTitle"));
             product.setPrice(rs.getDouble("price"));
+            product.setCategory(rs.getString("category"));
+            product.setImage(rs.getString("image"));
             product.setQty(rs.getInt("qty"));
             return product;
         }
@@ -51,9 +53,9 @@ public class ProductDao {
     }
 
     public boolean saveProduct(Product product) {
-        String sql = "insert into product (pname, price, qty) values (?, ?, ?)";
+        String sql = "insert into product (productTitle, price, category, image  qty) values (?, ?, ?)";
 
-        int value = jdbcTemplate.update(sql, new Object[]{product.getPname(), product.getPrice(), product.getQty()});
+        int value = jdbcTemplate.update(sql, new Object[]{product.getProductTitle(), product.getPrice(), product.getCategory(), product.getImage(), product.getQty()});
 
         if (value > 0) {
             return true;
@@ -63,9 +65,9 @@ public class ProductDao {
     }
 
     public boolean updateProduct(Product product) {
-        String sql = "update product set pname=?, price=?, qty=? where pid=?";
+        String sql = "update product set productTitle=?, price=?, category=?, image?, qty=? where productID=?";
 
-        int value = jdbcTemplate.update(sql, new Object[]{product.getPname(), product.getPrice(), product.getQty(), product.getPid()});
+        int value = jdbcTemplate.update(sql, new Object[]{product.getProductTitle(), product.getPrice(), product.getCategory(), product.getImage(), product.getQty(), product.getProductID()});
 
         if (value > 0) {
             return true;
@@ -75,7 +77,7 @@ public class ProductDao {
     }
 
     public boolean deleteProduct(int id) {
-        String sql = "delete from product where pid=?";
+        String sql = "delete from product where productID=?";
 
         int value = jdbcTemplate.update(sql, new Object[]{id});
 

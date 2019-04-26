@@ -16,12 +16,12 @@ CREATE TABLE `customer` (
 
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
 INSERT INTO `customer` (`cid`,`cname`,`phone`) VALUES 
- (1,'zubayer','01515634889'),
- (2,'rasel','01914008411'),
- (3,'uzzol','01670813134'),
- (4,'sharmin','01715491885'),
- (6,'bithi','01864203231'),
- (8,'akram','01515634889');
+ (1,'Donna','0851234567'),
+ (2,'John','0861234567'),
+ (3,'Bob','0831234567'),
+ (4,'Mary','0871234567'),
+ (6,'Joe','0891234567'),
+ (8,'Kelly','0821234567');
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 
 
@@ -151,9 +151,11 @@ INSERT INTO `orders` (`oid`,`cid`,`total`,`orderType`,`orderDate`) VALUES
 
 DROP TABLE IF EXISTS `product`;
 CREATE TABLE `product` (
-  `pid` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `pname` varchar(45) NOT NULL,
+  `productID` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `productTitle` varchar(45) NOT NULL,
   `price` double NOT NULL,
+  `category` varchar(45) NOT NULL,
+  `image` varchar(45) NOT NULL,
   `qty` int(10) unsigned NOT NULL,
   PRIMARY KEY (`pid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
@@ -163,16 +165,16 @@ CREATE TABLE `product` (
 --
 
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` (`pid`,`pname`,`price`,`qty`) VALUES 
- (1,'shirt',500,80),
- (4,'pant',700,16),
- (5,'mobile',15000,49),
- (6,'sunglass',4000,40),
- (7,'laptop',76000,79),
- (8,'bag',1600,189),
- (9,'mouse',300,119),
- (10,'hdd',5500,119),
- (11,'printer',5000,100);
+INSERT INTO `product` (`productID`,`ProductTitle`,`price`,`category`,`image``qty`) VALUES 
+ (1,'computer',1000,'eletronics', '???',80),
+ (4,'mac',1200,'eletronics', '???',16),
+ (5,'ipad',500,'eletronics', '???',49),
+ (6,'iphone',500,'eletronics', '???',40),
+ (7,'ipod',100,'eletronics', '???',79),
+ (8,'dishwaser',300,'eletronics', '???',189),
+ (9,'tv',300,'eletronics', '???',119),
+ (10,'printer',80,'eletronics', '???',119),
+ (11,'mouse',20,'eletronics', '???',100);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 
 

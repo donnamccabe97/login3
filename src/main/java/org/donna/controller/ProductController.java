@@ -29,8 +29,10 @@ public class ProductController {
     @RequestMapping(value = "/addProduct", method = RequestMethod.POST)
     public String saveProduct(ModelMap modelMap, HttpServletRequest request) {
         Product product = new Product();
-        product.setPname(request.getParameter("pname"));
+        product.setProductTitle(request.getParameter("productTitle"));
         product.setPrice(Double.parseDouble(request.getParameter("price")));
+        product.setCategory(request.getParameter("category"));
+        product.setImage(request.getParameter("image"));
         product.setQty(Integer.parseInt(request.getParameter("qty")));
         boolean status = productDao.saveProduct(product);
         if (status) {
@@ -52,9 +54,11 @@ public class ProductController {
     @RequestMapping(value = "/updateProduct", method = RequestMethod.POST)
     public String updateProduct(ModelMap modelMap, HttpServletRequest request) {
         Product product = new Product();
-        product.setPid(Integer.parseInt(request.getParameter("pid")));
-        product.setPname(request.getParameter("pname"));
+        product.setProductID(Integer.parseInt(request.getParameter("productID")));
+        product.setProductTitle(request.getParameter("productTitle"));
         product.setPrice(Double.parseDouble(request.getParameter("price")));
+        product.setCategory(request.getParameter("category"));
+        product.setImage(request.getParameter("image"));
         product.setQty(Integer.parseInt(request.getParameter("qty")));
         boolean status = productDao.updateProduct(product);
         if (status) {
