@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -9,6 +10,7 @@
         <spring:url value="/resources/css/font-awesome.css" var="fontawesomeCSS"/>
         <spring:url value="/resources/js/jquery.min.js" var="jqueryJS"/>
         <spring:url value="/resources/js/bootstrap.js" var="bootstrapJS"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="${bootstrapCSS}"/>
         <link rel="stylesheet" type="text/css" href="${fontawesomeCSS}"/>
         <script src="${jqueryJS}"></script>

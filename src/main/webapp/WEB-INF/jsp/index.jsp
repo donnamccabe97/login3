@@ -6,12 +6,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <spring:url value="/resources/css/bootstrap.css" var="bootstrapCSS"/>
-        <spring:url value="/resources/css/font-awesome.css" var="fontawesomeCSS"/>
-        <spring:url value="/resources/js/jquery.min.js" var="jqueryJS"/>
-        <spring:url value="/resources/js/bootstrap.js" var="bootstrapJS"/>
-        <spring:url value="/resources/js/angular.min.js" var="angularJS"/>
-        <spring:url value="/resources/js/my_app.js" var="myAppJS"/>
+        <spring:url value="/webapp/resources/css/bootstrap.css" var="bootstrapCSS"/>
+        <spring:url value="/webapp/resources/css/font-awesome.css" var="fontawesomeCSS"/>
+        <spring:url value="/webapp/resources/js/jquery.min.js" var="jqueryJS"/>
+        <spring:url value="/webapp/resources/js/bootstrap.js" var="bootstrapJS"/>
+        <spring:url value="/webapp/resources/js/angular.min.js" var="angularJS"/>
+        <spring:url value="/webapp/resources/js/my_app.js" var="myAppJS"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="${bootstrapCSS}"/>
         <link rel="stylesheet" type="text/css" href="${fontawesomeCSS}"/>
         <script src="${jqueryJS}"></script>
